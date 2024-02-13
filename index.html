@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rating system</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <style>
+        #submit:hover{
+            box-shadow: 2px 2px 10px 5px rgb(0, 0, 0,.2);
+        }
+        @media all and (min-width: 100px) and (max-width: 500px){
+            #submit{
+                width: 25%;
+                padding: 0%;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+    <form id="myForm">
+    <div class="text-center border border-dark border-2 w-75 mx-auto mt-5">
+            <b><h2 class="pe-none">Rate us</h2></b><br>
+            <div class="d-flex justify-content-evenly p-0">
+            <div>
+            <img src="disply1.jpg" alt="very bad" class="rounded-circle w-75 " id="one" draggable="false" onclick="change1();">
+            </div>
+            <div>
+            <img src="disply2.jpg" alt="not bad" class="rounded-circle w-75 " id="two" draggable="false" onclick="change2();">
+            </div>
+            <div>
+            <img src="disply3.jpg" alt="normal" class="rounded-circle w-75 " id="three" draggable="false" onclick="change3();">
+            </div>
+            <div>
+            <img src="disply4.jpg" alt="intresting" class="rounded-circle w-75 " id="four" draggable="false" onclick="change4();">
+            </div>
+            <div>
+            <img src="disply5.jpg" alt="wonderfull" class="rounded-circle w-75 " id="five" draggable="false" onclick="change5();">
+            </div>
+            </div>
+            <div id="resultDiv" style="font-weight: bold;" class="pb-2 pe-none"></div>
+            <button type="submit" class="btn btn-outline-warning mb-2" id="submit" onclick="submitForm()">Submit</button><br>
+    </div>
+    </form>
+    </div>
+    <script>
+        function change1()
+        {
+            document.getElementById("one").src="rating1.jpg";
+            document.getElementById("two").src="disply2.jpg";
+            document.getElementById("three").src="disply3.jpg";
+            document.getElementById("four").src="disply4.jpg";
+            document.getElementById("five").src="disply5.jpg";
+            document.getElementById("resultDiv").innerText="Very Bad!";
+        }
+        function change2()
+        {
+            document.getElementById("one").src="disply1.jpg";
+            document.getElementById("two").src="rating2.jpg";
+            document.getElementById("three").src="disply3.jpg";
+            document.getElementById("four").src="disply4.jpg";
+            document.getElementById("five").src="disply5.jpg";
+            document.getElementById("resultDiv").innerText="Not Bad!";
+        }
+        function change3()
+        {
+            document.getElementById("one").src="disply1.jpg";
+            document.getElementById("two").src="disply2.jpg";
+            document.getElementById("three").src="rating3.jpg";
+            document.getElementById("four").src="disply4.jpg";
+            document.getElementById("five").src="disply5.jpg";
+            document.getElementById("resultDiv").innerText="Good!";
+        }
+        function change4()
+        {
+            document.getElementById("one").src="disply1.jpg";
+            document.getElementById("two").src="disply2.jpg";
+            document.getElementById("three").src="disply3.jpg";
+            document.getElementById("four").src="rating4.jpg";
+            document.getElementById("five").src="disply5.jpg";
+            document.getElementById("resultDiv").innerText="Intresting!";
+        }
+        
+        function change5()
+        {
+            document.getElementById("one").src="disply1.jpg";
+            document.getElementById("two").src="disply2.jpg";
+            document.getElementById("three").src="disply3.jpg";
+            document.getElementById("four").src="disply4.jpg";
+            document.getElementById("five").src="rating5.jpg";
+            document.getElementById("resultDiv").innerText="Wonderfull!";
+        }
+        function submitForm(){
+            document.cookie = (document.getElementById("resultDiv").innerText);
+        }
+    </script>
+</body>
+</html>
